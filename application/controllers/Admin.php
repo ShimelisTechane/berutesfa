@@ -657,8 +657,8 @@ class Admin extends CI_Controller
                 $message = '';
                 foreach ($marks as $row2) {
                     $subject       = $this->db->get_where('subject' , array('subject_id' => $row2['subject_id']))->row()->name;
-                    $mark_obtained = $row2['mark_obtained'];  
-                    $message      .= $row2['student_id'] . $subject . ' : ' . $mark_obtained . ' , ';
+                    $mark_total = $row2['mark_total'];  
+                    $message      .= $row2['student_id'] . $subject . ' : ' . $mark_total . ' , ';
                     
                 }
                 // send sms
@@ -692,7 +692,7 @@ class Admin extends CI_Controller
             }
         }
         if ($this->input->post('operation') == 'update') {
-            $data['mark_obtained'] = $this->input->post('mark_obtained');
+            $data['mark_total'] = $this->input->post('mark_total');
             $data['comment']       = $this->input->post('comment');
             
             $this->db->where('mark_id', $this->input->post('mark_id'));

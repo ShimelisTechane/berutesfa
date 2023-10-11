@@ -142,11 +142,11 @@
 									<?php echo $row['name'];?>
 								</td>
 								<td>
-									 <input type="number" value="<?php echo $row2['mark_obtained'];?>" name="mark_obtained" class="form-control"  />
+									 <input type="number" value="<?php echo $row2['mark_total'];?>" name="mark_total" class="form-control" readonly />
 												
 								</td>
 								<td>
-									<textarea name="comment" class="form-control"><?php echo $row2['comment'];?></textarea>
+									<textarea name="comment" class="form-control" readonly><?php echo $row2['comment'];?></textarea>
 								</td>
                                 <td>
                                 	<input type="hidden" name="mark_id" value="<?php echo $row2['mark_id'];?>" />
@@ -155,8 +155,8 @@
                                 	<input type="hidden" name="class_id" value="<?php echo $class_id;?>" />
                                 	<input type="hidden" name="subject_id" value="<?php echo $subject_id;?>" />
                                     
-                                	<input type="hidden" name="operation" value="update" />
-                                	<button type="submit" class="btn btn-primary"> Update</button>
+                                	<!-- <input type="hidden" name="operation" value="update" />
+                                	<button type="submit" class="btn btn-primary"> Update</button> -->
                                 </td>
 							 </tr>
                              </form>

@@ -85,9 +85,13 @@
                 <table class="table table-bordered table-hover table-striped" >
                     <thead>
                         <tr>
-                            <td><?php echo ('Student');?></td>
-                            <td><?php echo ('Mark Obtained');?>(out of 100)</td>
-                            <td><?php echo ('Comment');?></td>
+                        <td><?php echo ('Student'); ?></td>
+                        <td>(Test One)</td>
+                        <td>(Test Two)</td>
+                        <td>(Mid Exam)</td>
+                        <td>(Final Exam)</td>
+                        <td>(Total Out Of 100)</td>
+                        <td><?php echo ('Comment'); ?></td>
                         </tr>
                     </thead>
                     <tbody>
@@ -104,18 +108,37 @@
 							$query = $this->db->get_where('mark' , $verify_data);							 
 							$marks	=	$query->result_array();
 							foreach($marks as $row2):
+                                // Calculate total marks
+                                $totalMarks = $row2['exam_one'] + $row2['exam_two'] + $row2['mid_exam'] + $row2['final_exam'];
+                            
 							?>
                             <tr>
 								<td>
 									<?php echo $row['name'];?>
 								</td>
-								<td style="text-align:center;">
-									 <?php echo $row2['mark_obtained'];?>
-												
-								</td>
-								<td style="width:200px;">
-									<?php echo $row2['comment'];?>
-								</td>
+								<td>
+                                    <input type="number" value="<?php echo $row2['exam_one']; ?>" name="exam_one"
+                                           class="form-control" min="0" max="10" readonly/>
+                                </td>
+                                <td>
+                                    <input type="number" value="<?php echo $row2['exam_two']; ?>" name="exam_two"
+                                           class="form-control" min="0" max="10" readonly/>
+                                </td>
+                                <td>
+                                    <input type="number" value="<?php echo $row2['mid_exam']; ?>" name="mid_exam"
+                                           class="form-control" min="0" max="30" readonly/>
+                                </td>
+                                <td>
+                                    <input type="number" value="<?php echo $row2['final_exam']; ?>" name="final_exam"
+                                           class="form-control" min="0" max="50" readonly/>
+                                </td>
+                                <td>
+                                    <input type="number" value="<?php echo $totalMarks; ?>" name="mark_total"
+                                           class="form-control" readonly/>
+                                </td>
+                                <td>
+                                    <textarea name="comment" class="form-control" readonly><?php echo $row2['comment']; ?> </textarea>
+                                </td>
 							 </tr>
                          	<?php 
 							endforeach;
@@ -131,7 +154,60 @@
 		</div>
 	</div>
 </div>
+<script>
+    function generateComment(totalMark) {
+        // Implement your comment logic here based on the total mark
+        if (totalMark >= 90) {
+            return 'Excellent';
+        } else if (totalMark >= 80) {
+            return 'Very Good';
+        } else if (totalMark >= 70) {
+            return 'Good';
+        } else if (totalMark >= 60) {
+            return 'Okay';
+        } else {
+            return 'Needs Improvement';
+        }
+    }
 
+    document.addEventListener('input', function (e) {
+        if (e.target.name === 'exam_one' || e.target.name === 'exam_two' || e.target.name === 'mid_exam' || e.target.name === 'final_exam') {
+            calculateMarkTotal(e.target);
+        }
+    });
+
+    function calculateMarkTotal(targetInput) {
+        const row = targetInput.closest('tr');
+        const examOne = parseFloat(row.querySelector('input[name="exam_one"]').value) || 0;
+        const examTwo = parseFloat(row.querySelector('input[name="exam_two"]').value) || 0;
+        const midExam = parseFloat(row.querySelector('input[name="mid_exam"]').value) || 0;
+        const finalExam = parseFloat(row.querySelector('input[name="final_exam"]').value) || 0;
+
+        const markTotal = examOne + examTwo + midExam + finalExam;
+        const markTotalInput = row.querySelector('input[name="mark_total"]');
+        markTotalInput.value = markTotal;
+
+        // Generate and set the comment based on the mark_total
+        const commentInput = row.querySelector('textarea[name="comment"]');
+        commentInput.value = generateComment(markTotal);
+        sortMarksAscending();
+    }
+
+    function sortMarksAscending() {
+    const rows = document.querySelectorAll('tr[data-rankable]');
+    const rankableRows = Array.from(rows);
+
+    // Create an array to store mark_total values as integers
+    const marks = rankableRows.map((row) => parseInt(row.querySelector('input[name="mark_total"]').value) || 0);
+
+    marks.sort((a, b) => a - b); // Sort marks in ascending order
+
+    // Update ranks based on the sorted marks
+    rankableRows.forEach((row, index) => {
+        row.querySelector('input[name="rank"]').value = index + 1;
+    });
+}
+</script>
 <script type="text/javascript">
   function show_subjects(class_id)
   {

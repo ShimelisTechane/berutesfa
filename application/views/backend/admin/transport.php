@@ -21,10 +21,10 @@
                 <table class="table table-bordered table-hover table-striped datatable" id="table_export">
                 	<thead>
                 		<tr>
-                    		<th><div><?php echo ('Route Name');?></div></th>
+                    		<th><div><?php echo ('Driver Name');?></div></th>
                     		<th><div><?php echo ('Number of vehicle');?></div></th>
                     		<th><div><?php echo ('Description');?></div></th>
-                    		<th><div><?php echo ('Route fare');?></div></th>
+                    		<th><div><?php echo ('Total seat');?></div></th>
                     		<th><div><?php echo ('Options');?></div></th>
 						</tr>
 					</thead>
@@ -74,7 +74,7 @@
                 <div class="box-content">
                 	<?php echo form_open(base_url() . 'index.php?admin/transport/create' , array('class' => 'form-horizontal form-groups-bordered validate','target'=>'_top'));?>
                             <div class="form-group">
-                                <label class="col-sm-3 control-label"><?php echo ('Route Name');?></label>
+                                <label class="col-sm-3 control-label"><?php echo ('Driver Name');?></label>
                                 <div class="col-sm-5">
                                     <input type="text" class="form-control" name="route_name"/>
                                 </div>
@@ -92,7 +92,7 @@
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label class="col-sm-3 control-label"><?php echo ('Route Fare');?></label>
+                                <label class="col-sm-3 control-label"><?php echo ('Total Seat');?></label>
                                 <div class="col-sm-5">
                                     <input type="text" class="form-control" name="route_fare"/>
                                 </div>

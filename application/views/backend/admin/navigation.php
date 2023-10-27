@@ -75,7 +75,7 @@
                     ?>
                     <li class="<?php if ($page_name == 'subject' && $class_id == $row['class_id']) echo 'active'; ?>">
                         <a href="<?php echo base_url(); ?>index.php?admin/subject/<?php echo $row['class_id']; ?>">
-                            <span><?php echo ('Class'); ?> <?php echo $row['name']; ?></span>
+                            <span> <?php echo $row['name']; ?></span>
                         </a>
                     </li>
                 <?php endforeach; ?>
@@ -277,12 +277,12 @@
         </li>
 
         <!-- TRANSPORT -->
-        <!-- <li class="<?php if ($page_name == 'transport') echo 'active'; ?> ">
+        <li class="<?php if ($page_name == 'transport') echo 'active'; ?> ">
             <a href="<?php echo base_url(); ?>index.php?admin/transport">
                 <i class="entypo-location"></i>
                 <span><?php echo ('Transportation'); ?></span>
             </a>
-        </li> -->
+        </li>
 
         <!-- DORMITORY -->
         <!-- <li class="<?php if ($page_name == 'dormitory') echo 'active'; ?> ">

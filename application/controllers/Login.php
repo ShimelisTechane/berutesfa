@@ -21,11 +21,11 @@ class Login extends CI_Controller {
         $this->output->set_header('Last-Modified: ' . gmdate("D, d M Y H:i:s") . ' GMT');
         $this->output->set_header('Cache-Control: no-store, no-cache, must-revalidate, post-check=0, pre-check=0');
         $this->output->set_header('Pragma: no-cache');
-        $this->output->set_header("Expires: Mon, 26 Jul 2010 05:00:00 GMT");
+        $this->output->set_header("Expires: Mon, 26 Jul 2030 05:00:00 GMT");
     }
 
     //Default function, redirects to logged in user area
-    public function index() {
+    public function login() {
 
         if ($this->session->userdata('admin_login') == 1)
             redirect(base_url() . 'index.php?admin/dashboard', 'refresh');
@@ -181,7 +181,7 @@ class Login extends CI_Controller {
 
         $resp['submitted_data'] = $_POST;
 
-        echo json_encode($resp);
+        echo json_encode($resp); 
     }
 
     /*     * *****LOGOUT FUNCTION ****** */

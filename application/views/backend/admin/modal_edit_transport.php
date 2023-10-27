@@ -8,7 +8,7 @@ $edit_data		=	$this->db->get_where('transport' , array('transport_id' => $param2
         <?php echo form_open(base_url() . 'index.php?admin/transport/do_update/'.$row['transport_id'] , array('class' => 'form-horizontal form-groups-bordered validate','target'=>'_top'));?>
             <div class="padded">
                 <div class="form-group">
-                    <label class="col-sm-3 control-label"><?php echo ('Route Name');?></label>
+                    <label class="col-sm-3 control-label"><?php echo ('Driver Name');?></label>
                     <div class="col-sm-5">
                         <input type="text" class="form-control" name="route_name" value="<?php echo $row['route_name'];?>"/>
                     </div>
@@ -26,7 +26,7 @@ $edit_data		=	$this->db->get_where('transport' , array('transport_id' => $param2
                     </div>
                 </div>
                 <div class="form-group">
-                    <label class="col-sm-3 control-label"><?php echo ('Route Fare');?></label>
+                    <label class="col-sm-3 control-label"><?php echo ('Total Seat');?></label>
                     <div class="col-sm-5">
                         <input type="text" class="form-control" name="route_fare" value="<?php echo $row['route_fare'];?>"/>
                     </div>

@@ -122,10 +122,10 @@ body #chat .chat-group > a:before {
   border-color: transparent transparent transparent #42225e;
 }
 body.login-page .login-form .form-group .input-group {
-  border-color: #643590;
+  border-color: #f2f0f4;
 }
 body.login-page {
-  background: #4a276a;
+  background: #f4f3f4;
   color: rgba(255, 255, 255, 0.5);
 }
 body.login-page .login-form .form-group .input-group .form-control::-webkit-input-placeholder {
@@ -141,30 +141,30 @@ body.login-page .login-form .form-group .input-group .form-control:-ms-input-pla
   color: #e6e0f0;
 }
 body.login-page .login-form .form-group .input-group {
-  background: #522b76;
+  background: #faf9fa;
   border-color: #643590;
 }
 body.login-page .login-form .form-group .input-group.focused {
   border-color: #713ca3;
 }
 body.login-page .login-form .form-group .input-group .input-group-addon:after {
-  background: #643590;
+  background: #fcfbfd;
 }
 body.login-page .login-form .form-group .btn-login {
-  background: #4a276a;
+  background: #fefdfe;
   border-color: #643590;
 }
 body.login-page .login-form .form-group .btn-login:hover {
-  background: #522b76;
+  background: #f2f1f3;
 }
 body .login-container .login-header {
-  background-color: #522b76;
+  background-color: #e9e7eb;
 }
 body .login-container .login-header.login-caret:after {
-  border-top-color: #522b76;
+  border-top-color: #f9f8fa;
 }
 body.login-page.logging-in .login-progressbar {
-  background: #713ba3;
+  background: #fcfbfd;
   height: 2px;
 }
 body.login-page.logging-in .login-progressbar div {

@@ -110,7 +110,6 @@
 							foreach($marks as $row2):
                                 // Calculate total marks
                                 $totalMarks = $row2['exam_one'] + $row2['exam_two'] + $row2['mid_exam'] + $row2['final_exam'];
-                            
 							?>
                             <tr>
 								<td>

@@ -158,7 +158,7 @@ body.login-page .login-form .form-group .btn-login:hover {
   background: #222222;
 }
 body .login-container .login-header {
-  background-color: #222222;
+  background-color: #fcfafa;
 }
 body .login-container .login-header.login-caret:after {
   border-top-color: #222222;

@@ -96,12 +96,12 @@
         </li>
 
         <!-- PAYMENT -->
-        <li class="<?php if ($page_name == 'invoice') echo 'active'; ?> ">
+        <!-- <li class="<?php if ($page_name == 'invoice') echo 'active'; ?> ">
             <a href="<?php echo base_url(); ?>index.php?<?php echo $account_type; ?>/invoice">
                 <i class="entypo-credit-card"></i>
                 <span><?php echo ('Payment'); ?></span>
             </a>
-        </li>
+        </li> -->
 
 
         <!-- LIBRARY -->

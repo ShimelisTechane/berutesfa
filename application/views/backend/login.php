@@ -23,18 +23,8 @@
 	<link rel="stylesheet" href="assets/css/neon-theme.css">
 	<link rel="stylesheet" href="assets/css/neon-forms.css">
 	<link rel="stylesheet" href="assets/css/custom.css">
-
 	<script src="assets/js/jquery-1.11.0.min.js"></script>
-
-	<!--[if lt IE 9]><script src="assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
-
-	<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-	<!--[if lt IE 9]>
-		<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-		<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-	<![endif]-->
 	<link rel="shortcut icon" href="assets/images/favicon.png">
-	
 </head>
 <body class="page-body login-page login-form-fall" data-url="http://neon.dev">
 
@@ -43,7 +33,11 @@
 <script type="text/javascript">
 var baseurl = '<?php echo base_url();?>';
 </script>
-
+<!-- <style>
+	.body{
+		background-color:white;
+	}
+</style> -->
 <div class="login-container">
 	
 	<div class="login-header login-caret">
@@ -115,7 +109,7 @@ var baseurl = '<?php echo base_url();?>';
 					</button>
 				</div>
 				
-						
+				<a href="<?php echo base_url(); ?>index.php?index_home" class="nav-item nav-link active" style = "color:white;"><b>Back To Home</b></a>	
 			</form>
 			
 			
@@ -143,73 +137,7 @@ var baseurl = '<?php echo base_url();?>';
         document.getElementById("email").value  =   email;
         document.getElementById("password").value  =   password;
     }
-</script>
-
-<!-- <div class="panel panel-primary" style="background-color:rgba(255, 255, 255, 0);border-color: rgba(235, 235, 235, 0.14);">
-    <div class="panel-heading" style="background-color:rgba(255, 255, 255, 0.16);border-color: rgba(204, 204, 204, 0.08);">
-        <div class="panel-title">Demo account login credentials</div>
-        <div class="panel-options">
-            <a href="#" data-rel="collapse"><i class="entypo-down-open"></i></a>
-            <a href="#" data-rel="close"><i class="entypo-cancel"></i></a>
-        </div>
-    </div>
-        
-    <div class="panel-body with-table">
-        <table class="table table-bordered table-hover table-responsive">
-            <thead>
-                <tr>
-                    <th>Account</th>
-                    <th>Email</th>
-                    <th>Password</th>
-                    <th>Copy</th>
-                </tr>
-            </thead>
-        
-            <tbody>
-                <tr>
-                    <td>Admin</td>
-                    <td>admin@example.com</td>
-                    <td>1234</td>
-                    <td>
-                        <i class="entypo-target icon-hover tooltip-default" onclick="copy('admin@example.com' , '1234')"
-                            data-toggle="tooltip" data-placement="top" title="" data-original-title="copy"></i>
-                    </td>
-                </tr>
-                <tr>
-                    <td>Teacher</td>
-                    <td>teacher@example.com</td>
-                    <td>1234</td>
-                    <td>
-                        <i class="entypo-target icon-hover tooltip-default" onclick="copy('teacher@example.com' , '1234')"
-                             data-toggle="tooltip" data-placement="top" title="" data-original-title="copy"></i>
-                    </td>
-                </tr>
-                <tr>
-                    <td>Student</td>
-                    <td>student@example.com</td>
-                    <td>1234</td>
-                    <td>
-                        <i class="entypo-target icon-hover tooltip-default" onclick="copy('student@example.com' , '1234')"
-                             data-toggle="tooltip" data-placement="top" title="" data-original-title="copy"></i>
-                    </td>
-                </tr>
-                <tr>
-                    <td>Parent</td>
-                    <td>parent@example.com</td>
-                    <td>1234</td>
-                    <td>
-                        <i class="entypo-target icon-hover tooltip-default" onclick="copy('parent@example.com' , '1234')"
-                             data-toggle="tooltip" data-placement="top" title="" data-original-title="copy"></i>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
-</div> -->
-			
-			
-			
-			
+</script>			
 		</div>
 		
 	</div>

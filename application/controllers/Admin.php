@@ -2,12 +2,7 @@
 if (!defined('BASEPATH'))
     exit('No direct script access allowed');
 
-/*	
- *	@author 	: Farid Ahmed
- *	date		: 27 september, 2014
- *	SIgnetBD
- *	efarid08@gmail.com
- */
+
 
 class Admin extends CI_Controller
 {

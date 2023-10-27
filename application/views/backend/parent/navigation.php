@@ -91,7 +91,7 @@
         </li>
 
         <!-- PAYMENT -->
-        <li class="<?php if ($page_name == 'invoice') echo 'opened active';?> ">
+        <!-- <li class="<?php if ($page_name == 'invoice') echo 'opened active';?> ">
             <a href="#">
                 <i class="entypo-credit-card"></i>
                 <span><?php echo ('Payment'); ?></span>
@@ -107,7 +107,7 @@
                 </li>
             <?php endforeach;?>
             </ul>
-        </li>
+        </li> -->
 
 
         <!-- LIBRARY -->

@@ -66,7 +66,7 @@
                     </div>
                     <a href="<?php echo base_url(); ?>index.php?contact" class="nav-item nav-link">Contact Us</a>
                 </div>
-                <a href="<?php echo base_url(); ?>index.php?login" class="btn btn-primary rounded-pill px-3 d-none d-lg-block">Login<i class="fa fa-arrow-right ms-3"></i></a>
+                <a href="<?php echo base_url(); ?>index.php?login" class="btn btn-primary rounded-pill px-3 d-md-block">Login<i class="fa fa-arrow-right ms-3"></i></a>
             </div>
         </nav>
         <!-- Navbar End -->

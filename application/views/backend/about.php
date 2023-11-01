@@ -147,7 +147,7 @@
                                 <h1 class="mb-4">Become A Teacher</h1>
                                 <p class="mb-4">A teacher is a professional educator who prepares students to continue their studies to enter the job market by providing knowledge. Teachers can also educate their students in soft skills , such as listening and time management, and hard skills, such as technical knowledge.
                                 </p>
-                                <a class="btn btn-primary py-3 px-5" href="">Get Started Now<i class="fa fa-arrow-right ms-2"></i></a>
+                                <a class="btn btn-primary py-3 px-5" href="">Be Come Professional Teacher</a>
                             </div>
                         </div>
                     </div>

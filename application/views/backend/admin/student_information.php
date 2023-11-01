@@ -57,7 +57,6 @@
                             <td><?php echo $row['address'];?></td>
                             <td><?php echo $row['email'];?></td>
                             <td>
-                                
                                 <div class="btn-group">
                                     <button type="button" class="btn btn-info btn-sm dropdown-toggle" data-toggle="dropdown">
                                         Action <span class="caret"></span>

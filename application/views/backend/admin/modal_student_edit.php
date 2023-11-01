@@ -14,9 +14,10 @@ foreach ( $edit_data as $row):
 			<div class="panel-body">
 				
                 <?php echo form_open(base_url() . 'index.php?admin/student/'.$row['class_id'].'/do_update/'.$row['student_id'] , array('class' => 'form-horizontal form-groups-bordered validate', 'enctype' => 'multipart/form-data'));?>
-                
-                	
-	
+                <input type="hidden" name="class_id" value="<?php echo $row['class_id']; ?>">
+                <input type="hidden" name="student_id" value="<?php echo $row['student_id']; ?>">
+
+
 					<div class="form-group">
 						<label for="field-1" class="col-sm-3 control-label"><?php echo ('Photo');?></label>
                         
@@ -109,7 +110,7 @@ foreach ( $edit_data as $row):
 							<input type="text" class="form-control" name="roll" value="<?php echo $row['roll'];?>" >
 						</div> 
 					</div>
-					
+					 
 					<div class="form-group">
 						<label for="field-2" class="col-sm-3 control-label"><?php echo ('Birthday');?></label>
                         
@@ -163,7 +164,7 @@ foreach ( $edit_data as $row):
         </div>
     </div>
 </div>
-
+ 
 <?php
 endforeach;
 ?>

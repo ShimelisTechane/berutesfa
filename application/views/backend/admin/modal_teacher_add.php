@@ -6,7 +6,7 @@
             		<i class="entypo-plus-circled"></i>
 					<?php echo ('Add Teacher');?>
             	</div>
-            </div>
+             </div>
 			<div class="panel-body">
 				
                 <?php echo form_open(base_url() . 'index.php?admin/teacher/create/' , array('class' => 'form-horizontal form-groups-bordered validate', 'enctype' => 'multipart/form-data'));?>
@@ -70,7 +70,7 @@
 						</div> 
 					</div>
 	
-					<!-- <div class="form-group">
+					<div class="form-group">
 						<label for="field-1" class="col-sm-3 control-label"><?php echo ('Photo');?></label>
                         
 						<div class="col-sm-5">
@@ -89,7 +89,7 @@
 								</div>
 							</div>
 						</div>
-					</div> -->
+					</div>
                     
                     <div class="form-group">
 						<div class="col-sm-offset-3 col-sm-5">

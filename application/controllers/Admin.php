@@ -51,9 +51,76 @@ class Admin extends CI_Controller
 		$this->load->view('backend/index', $page_data);
 	}
 	
-	
-	    /****MANAGE Academic Session*****/
-	
+	  /****MANAGE HOME SETTING*****/
+      function add_home_info()
+      {
+          if ($this->session->userdata('admin_login') != 1)
+              redirect(base_url(), 'refresh');
+              
+          $page_data['page_name']  = 'add_home_info';
+          $page_data['page_title'] = 'Add Home Information';
+          $this->load->view('backend/index', $page_data);
+      }
+	    /****about*****/
+        function about()
+        {
+            if ($this->session->userdata('admin_login') != 1)
+                redirect(base_url(), 'refresh');
+                
+            $page_data['page_name']  = 'about';
+            $page_data['page_title'] = 'Add About System';
+            $this->load->view('backend/index', $page_data);
+        }
+	   /****class*****/
+       function class_info()
+       {
+           if ($this->session->userdata('admin_login') != 1)
+               redirect(base_url(), 'refresh');
+               
+           $page_data['page_name']  = 'class_info';
+           $page_data['page_title'] = 'Add Class Information';
+           $this->load->view('backend/index', $page_data);
+       }
+        /****school_facility*****/
+        function school_facility()
+        {
+            if ($this->session->userdata('admin_login') != 1)
+                redirect(base_url(), 'refresh');
+                
+            $page_data['page_name']  = 'school_facility';
+            $page_data['page_title'] = 'Add School Facility';
+            $this->load->view('backend/index', $page_data);
+        }
+          /****popular_teacher*****/
+          function popular_teacher()
+          {
+              if ($this->session->userdata('admin_login') != 1)
+                  redirect(base_url(), 'refresh');
+                  
+              $page_data['page_name']  = 'popular_teacher';
+              $page_data['page_title'] = 'Add School Popular Teacher';
+              $this->load->view('backend/index', $page_data);
+          }
+           /****appointment*****/
+           function appointment()
+           {
+               if ($this->session->userdata('admin_login') != 1)
+                   redirect(base_url(), 'refresh');
+                   
+               $page_data['page_name']  = 'appointment';
+               $page_data['page_title'] = 'Add Student Appointment';
+               $this->load->view('backend/index', $page_data);
+           }
+             /****appointment*****/
+             function testimonial()
+             {
+                 if ($this->session->userdata('admin_login') != 1)
+                     redirect(base_url(), 'refresh');
+                     
+                 $page_data['page_name']  = 'testimonial';
+                 $page_data['page_title'] = 'Add Testimonial';
+                 $this->load->view('backend/index', $page_data);
+             }
 	function acd_session($param1 = '', $param2 = '')
     {
         if ($this->session->userdata('admin_login') != 1)
@@ -295,46 +362,96 @@ class Admin extends CI_Controller
     {
         if ($this->session->userdata('admin_login') != 1)
             redirect('login', 'refresh');
-        if ($param1 == 'create') {
-            $data['name']       = $this->input->post('name');
-            $data['birthday']   = $this->input->post('birthday');
-            $data['sex']        = $this->input->post('sex');
-            $data['address']    = $this->input->post('address');
-            $data['phone']      = $this->input->post('phone');
-            $data['email']      = $this->input->post('email');
-            $data['password']   = $this->input->post('password');
-            $data['class_id']   = $this->input->post('class_id');
-            if ($this->input->post('section_id') != '') {
-                $data['section_id'] = $this->input->post('section_id');
-            }
-            $data['parent_id']  = $this->input->post('parent_id');
-            $data['roll']       = $this->input->post('roll');
-            $this->db->insert('student', $data);
-            $student_id = $this->db->insert_id();
-            move_uploaded_file($_FILES['userfile']['tmp_name'], 'uploads/student_image/' . $student_id . '.jpg');
-            $this->session->set_flashdata('flash_message' , get_phrase('data_added_successfully'));
-            $this->email_model->account_opening_email('student', $data['email']); //SEND EMAIL ACCOUNT OPENING EMAIL
-            redirect(base_url() . 'index.php?admin/student_add/' . $data['class_id'], 'refresh');
-        }
-        if ($param2 == 'do_update') {
-            $data['name']        = $this->input->post('name');
-            $data['birthday']    = $this->input->post('birthday');
-            $data['sex']         = $this->input->post('sex');
-            $data['address']     = $this->input->post('address');
-            $data['phone']       = $this->input->post('phone');
-            $data['email']       = $this->input->post('email');
-            $data['class_id']    = $this->input->post('class_id');
-            $data['section_id']  = $this->input->post('section_id');
-            $data['parent_id']   = $this->input->post('parent_id');
-            $data['roll']        = $this->input->post('roll');
+            if ($param1 == 'create') {
+                // Retrieve the student data from the form
+                $data['name'] = $this->input->post('name');
+                $data['birthday'] = $this->input->post('birthday');
+                $data['sex'] = $this->input->post('sex');
+                $data['address'] = $this->input->post('address');
+                $data['phone'] = $this->input->post('phone');
+                $data['email'] = $this->input->post('email');
+                $data['password'] = $this->input->post('password');
+                $data['class_id'] = $this->input->post('class_id');
+                if ($this->input->post('section_id') != '') {
+                    $data['section_id'] = $this->input->post('section_id');
+                }
+                $data['parent_id'] = $this->input->post('parent_id');
+                $data['roll'] = $this->input->post('roll');
             
-            $this->db->where('student_id', $param3);
-            $this->db->update('student', $data);
-            move_uploaded_file($_FILES['userfile']['tmp_name'], 'uploads/student_image/' . $param3 . '.jpg');
-            $this->crud_model->clear_cache();
-            $this->session->set_flashdata('flash_message' , get_phrase('data_updated'));
-            redirect(base_url() . 'index.php?admin/student_information/' . $param1, 'refresh');
-        } 
+                // Insert student data (excluding the image) into the database
+                $this->db->insert('student', $data);
+                $student_id = $this->db->insert_id();
+            
+                // Handle image upload
+                if ($_FILES['userfile']['name'] != '') {
+                    $filename = stripslashes($_FILES['userfile']['name']);
+                    $extension = strtolower(pathinfo($filename, PATHINFO_EXTENSION));
+                    // Set the image name as the student ID without the extension
+                    $image_name1 = (string) $student_id;
+                    // Append the extension to the image name
+                    $image_name1 = $image_name1 . '.' . $extension;
+                    $newname = 'uploads/student_image/' . $image_name1;
+                    if (move_uploaded_file($_FILES['userfile']['tmp_name'], $newname)) {
+                        // Image uploaded successfully, update the student data with the image name
+                        $this->db->where('student_id', $student_id);
+                        $this->db->update('student', ['image' => $image_name1]);
+                    } else {
+                        // Handle image upload error
+                        $this->session->set_flashdata('error_message', 'Failed to upload the image.');
+                        redirect('your_form_page');
+                    }
+                }
+            
+                $this->session->set_flashdata('flash_message', get_phrase('data_added_successfully'));
+                $this->email_model->account_opening_email('student', $data['email']); // SEND EMAIL ACCOUNT OPENING EMAIL
+                redirect(base_url() . 'index.php?admin/student_add/' . $data['class_id'], 'refresh');
+            }
+            
+                
+            if ($param2 == 'do_update') {
+                $student_id = $this->input->post('student_id');
+                if (empty($student_id)) {
+                    // Handle invalid 'student_id', e.g., display an error message or redirect
+                    $this->session->set_flashdata('error_message', 'Invalid student ID');
+                    redirect('your_error_page');
+                }
+            
+                $data['name'] = $this->input->post('name');
+                $data['birthday'] = $this->input->post('birthday');
+                $data['sex'] = $this->input->post('sex');
+                $data['address'] = $this->input->post('address');
+                $data['phone'] = $this->input->post('phone');
+                $data['email'] = $this->input->post('email');
+                $data['section_id'] = $this->input->post('section_id');
+                $data['parent_id'] = $this->input->post('parent_id');
+                $data['roll'] = $this->input->post('roll');
+                $data['class_id'] = $this->input->post('class_id');
+            
+                // Handle image update
+                if (!empty($_FILES['userfile']['name'])) {
+                    $filename = $_FILES['userfile']['name'];
+                    $extension = pathinfo($filename, PATHINFO_EXTENSION);
+                    $image_name1 = $student_id . '.' . $extension;
+                    $newname = 'uploads/student_image/' . $image_name1;
+            
+                    if (move_uploaded_file($_FILES['userfile']['tmp_name'], $newname)) {
+                        $data['image'] = $image_name1;
+                    } else {
+                        // Handle image upload error
+                        $this->session->set_flashdata('error_message', 'Failed to upload the image.');
+                        redirect('your_form_page');
+                    }
+                }
+            
+                $this->db->where('student_id', $student_id);
+                $this->db->update('student', $data);
+            
+                $this->crud_model->clear_cache();
+                $this->session->set_flashdata('flash_message', get_phrase('data_updated'));
+                redirect(base_url() . 'index.php?admin/student_information/' . $param1, 'refresh');
+            }
+            
+            
 		
         if ($param2 == 'delete') {
             $this->db->where('student_id', $param3);
@@ -344,43 +461,98 @@ class Admin extends CI_Controller
         }
     }
      /****MANAGE PARENTS CLASSWISE*****/
-    function parent($param1 = '', $param2 = '', $param3 = '')
-    {
-        if ($this->session->userdata('admin_login') != 1)
-            redirect('login', 'refresh');
-        if ($param1 == 'create') {
-            $data['name']        			= $this->input->post('name');
-            $data['email']       			= $this->input->post('email');
-            $data['password']    			= $this->input->post('password');
-            $data['phone']       			= $this->input->post('phone');
-            $data['address']     			= $this->input->post('address');
-            $data['profession']  			= $this->input->post('profession');
-            $this->db->insert('parent', $data);
-            $this->session->set_flashdata('flash_message' , get_phrase('data_added_successfully'));
-            $this->email_model->account_opening_email('parent', $data['email']); //SEND EMAIL ACCOUNT OPENING EMAIL
-            redirect(base_url() . 'index.php?admin/parent/', 'refresh');
+     function parent($param1 = '', $param2 = '', $param3 = '')
+     {
+         if ($this->session->userdata('admin_login') != 1) {
+             redirect('login', 'refresh');
+         }
+     
+         if ($param1 == 'create') {
+             $data['name'] = $this->input->post('name');
+             $data['email'] = $this->input->post('email');
+             $data['password'] = $this->input->post('password');
+             $data['phone'] = $this->input->post('phone');
+             $data['address'] = $this->input->post('address');
+             $data['profession'] = $this->input->post('profession');
+             $this->db->insert('parent', $data);
+             $parent_id = $this->db->insert_id();
+     
+             // Handle image upload
+             if ($_FILES['userfile']['name'] != '') {
+                 $filename = stripslashes($_FILES['userfile']['name']);
+                 $extension = strtolower(pathinfo($filename, PATHINFO_EXTENSION));
+     
+                 // Set the image name as the parent ID without the extension
+                 $image_name1 = (string) $parent_id;
+     
+                 // Append the extension to the image name
+                 $image_name1 = $image_name1 . '.' . $extension;
+     
+                 $newname = 'uploads/parent_image/' . $image_name1;
+     
+                 if (move_uploaded_file($_FILES['userfile']['tmp_name'], $newname)) {
+                     // Image uploaded successfully, update the parent data with the image name
+                     $this->db->where('parent_id', $parent_id);
+                     $this->db->update('parent', ['image' => $image_name1]);
+                 } else {
+                     // Handle image upload error
+                     $this->session->set_flashdata('error_message', 'Failed to upload the image.');
+                     redirect(base_url() . 'index.php?admin/parent/', 'refresh');
+                 }
+             }
+     
+             $this->session->set_flashdata('flash_message', get_phrase('data_added_successfully'));
+             $this->email_model->account_opening_email('parent', $data['email']); //SEND EMAIL ACCOUNT OPENING EMAIL
+             redirect(base_url() . 'index.php?admin/parent/', 'refresh');
+         }
+     
+         if ($param1 == 'edit') {
+            $parent_id = $this->input->post('parent_id');
+            if (empty($parent_id)) {
+                // Handle invalid 'parent_id', e.g., display an error message or redirect
+                $this->session->set_flashdata('error_message', 'Invalid parent ID');
+                redirect('your_error_page');
+            }
+        
+            $data['name'] = $this->input->post('name');
+            $data['email'] = $this->input->post('email');
+            $data['phone'] = $this->input->post('phone');
+            $data['address'] = $this->input->post('address');
+            $data['profession'] = $this->input->post('profession');
+        
+            // Handle image update
+            if (!empty($_FILES['userfile']['name'])) {
+                $filename = $_FILES['userfile']['name'];
+                $extension = pathinfo($filename, PATHINFO_EXTENSION);
+                $image_name1 = $parent_id . '.' . $extension;
+                $newname = 'uploads/parent_image/' . $image_name1;
+        
+                if (move_uploaded_file($_FILES['userfile']['tmp_name'], $newname)) {
+                    $data['image'] = $image_name1;
+                } else {
+                    // Handle image upload error
+                    $this->session->set_flashdata('error_message', 'Failed to upload the image.');
+                    redirect(base_url() . 'index.php?admin/parent/', 'refresh');
+                }
+            }
+            $this->db->where('parent_id', $parent_id);
+            $this->db->update('parent', $data);
+            $this->crud_model->clear_cache();
+            $this->session->set_flashdata('flash_message', get_phrase('data_updated'));
+            redirect(base_url() . 'index.php?admin/parent/' . $param1, 'refresh');
         }
-        if ($param1 == 'edit') {
-            $data['name']                   = $this->input->post('name');
-            $data['email']                  = $this->input->post('email');
-            $data['phone']                  = $this->input->post('phone');
-            $data['address']                = $this->input->post('address');
-            $data['profession']             = $this->input->post('profession');
-            $this->db->where('parent_id' , $param2);
-            $this->db->update('parent' , $data);
-            $this->session->set_flashdata('flash_message' , get_phrase('data_updated'));
-            redirect(base_url() . 'index.php?admin/parent/', 'refresh');
-        }
-        if ($param1 == 'delete') {
-            $this->db->where('parent_id' , $param2);
-            $this->db->delete('parent');
-            $this->session->set_flashdata('flash_message' , get_phrase('data_deleted'));
-            redirect(base_url() . 'index.php?admin/parent/', 'refresh');
-        }
-        $page_data['page_title'] 	= 'All Parents';
-        $page_data['page_name']  = 'parent';
-        $this->load->view('backend/index', $page_data);
-    }
+         if ($param1 == 'delete') {
+             $this->db->where('parent_id', $param2);
+             $this->db->delete('parent');
+             $this->session->set_flashdata('flash_message', get_phrase('data_deleted'));
+             redirect(base_url() . 'index.php?admin/parent/', 'refresh');
+         }
+     
+         $page_data['page_title'] = 'All Parents';
+         $page_data['page_name'] = 'parent';
+         $this->load->view('backend/index', $page_data);
+     }
+     
 	
     
     /****MANAGE TEACHERS*****/
@@ -398,7 +570,27 @@ class Admin extends CI_Controller
             $data['password']    = $this->input->post('password');
             $this->db->insert('teacher', $data);
             $teacher_id = $this->db->insert_id();
-            move_uploaded_file($_FILES['userfile']['tmp_name'], 'uploads/teacher_image/' . $teacher_id . '.jpg');
+               // Handle image upload
+               if ($_FILES['userfile']['name'] != '') {
+                $filename = stripslashes($_FILES['userfile']['name']);
+                $extension = strtolower(pathinfo($filename, PATHINFO_EXTENSION));
+                // Set the image name as the student ID without the extension
+                $image_name1 = (string) $teacher_id;
+                // Append the extension to the image name
+                $image_name1 = $image_name1 . '.' . $extension;
+                $newname = 'uploads/teacher_image/' . $image_name1;
+                if (move_uploaded_file($_FILES['userfile']['tmp_name'], $newname)) {
+                    // Image uploaded successfully, update the student data with the image name
+                    $this->db->where('teacher_id', $teacher_id);
+                    $this->db->update('teacher', ['image' => $image_name1]);
+                } else {
+                    // Handle image upload error
+                    $this->session->set_flashdata('error_message', 'Failed to upload the image.');
+                    redirect('your_form_page');
+                }
+            }
+
+            //move_uploaded_file($_FILES['userfile']['tmp_name'], 'uploads/teacher_image/' . $teacher_id . '.jpg');
             $this->session->set_flashdata('flash_message' , get_phrase('data_added_successfully'));
             $this->email_model->account_opening_email('teacher', $data['email']); //SEND EMAIL ACCOUNT OPENING EMAIL
             redirect(base_url() . 'index.php?admin/teacher/', 'refresh');

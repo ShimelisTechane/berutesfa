@@ -9,6 +9,7 @@
                     <thead>
                         <tr>
                             <th>#</th>
+                            <th><div><?php echo ('Photo');?></div></th>
                             <th><div><?php echo ('Name');?></div></th>
                             <th><div><?php echo ('Email');?></div></th>
                             <th><div><?php echo ('Phone');?></div></th>
@@ -23,6 +24,7 @@
                             foreach($parents as $row):?>
                         <tr>
                             <td><?php echo $count++;?></td>
+                            <td><img src="<?php echo $this->crud_model->get_image_url('parent',$row['parent_id']);?>" class="img-circle" width="30" /></td>
                             <td><?php echo $row['name'];?></td>
                             <td><?php echo $row['email'];?></td>
                             <td><?php echo $row['phone'];?></td>

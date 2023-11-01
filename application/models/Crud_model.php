@@ -1,6 +1,6 @@
 <?php
 
-if (!defined('BASEPATH'))
+if (!defined('BASEPATH')) 
     exit('No direct script access allowed');
 
 class Crud_model extends CI_Model {
@@ -201,9 +201,18 @@ class Crud_model extends CI_Model {
             $image_url = base_url() . 'uploads/' . $type . '_image/' . $id . '.jpg';
         else
             $image_url = base_url() . 'uploads/user.jpg';
-
+    
         return $image_url;
     }
+    
+    // function get_image_url($type = '', $id = '') {
+    //     if (file_exists('uploads/' . $type . '_image/' . $id . '.jpg'))
+    //         $image_url = base_url() . 'uploads/' . $type . '_image/' . $id . '.jpg';
+    //     else
+    //         $image_url = base_url() . 'uploads/user.jpg';
+
+    //     return $image_url;
+    // }
 
     ////////STUDY MATERIAL//////////
     function save_study_material_info()
@@ -256,7 +265,7 @@ class Crud_model extends CI_Model {
     function send_new_private_message() {
         $message    = $this->input->post('message');
         $timestamp  = strtotime(date("Y-m-d H:i:s"));
-
+ 
         $reciever   = $this->input->post('reciever');
         $sender     = $this->session->userdata('login_type') . '-' . $this->session->userdata('login_user_id');
 

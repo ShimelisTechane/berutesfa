@@ -9,7 +9,7 @@ foreach ( $edit_data as $row):
             	<div class="panel-title" >
             		<i class="entypo-plus-circled"></i>
 					<?php echo ('Edit Teacher');?>
-            	</div>
+            	</div> 
             </div>
 			<div class="panel-body">
                     <?php echo form_open(base_url() . 'index.php?admin/teacher/do_update/'.$row['teacher_id'] , array('class' => 'form-horizontal form-groups-bordered validate','target'=>'_top', 'enctype' => 'multipart/form-data'));?>

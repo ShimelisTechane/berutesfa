@@ -345,7 +345,73 @@
                 <span><?php echo ('Account'); ?></span>
             </a>
         </li>
+   <!-- STUDENT -->
+      <li class="<?php
+        if ($page_name == 'add_home_info' ||
+		        $page_name == 'about' ||
+		        $page_name == 'class_info' ||
+                $page_name == 'school_facility' ||
+                $page_name == 'popular_teacher' ||
+                $page_name == 'appointment' ||
+                $page_name == 'testimonial')
+            echo 'opened active has-sub';
+        ?> ">
+            <a href="#">
+                <i class="fa fa-group"></i>
+                <span><?php echo ('Home_Setting'); ?></span>
+            </a>
+            <ul>
+                <!-- Home_Setting -->
+                
+                 <li class="<?php if ($page_name == 'add_home_info') echo 'active'; ?> ">
+                    <a href="<?php echo base_url(); ?>index.php?admin/add_home_info">
+                        <span><i class="entypo-dot"></i> <?php echo ('Home'); ?></span>
+                    </a>
+                </li>
+                
+                   
+                 
+                <li class="<?php if ($page_name == 'about') echo 'active'; ?> ">
+                    <a href="<?php echo base_url(); ?>index.php?admin/about">
+                        <span><i class="entypo-dot"></i> <?php echo ('About'); ?></span>
+                    </a>
+                </li>
 
+                <!-- class -->
+                <li class="<?php if ($page_name == 'class_info') echo 'active'; ?> ">
+                    <a href="<?php echo base_url(); ?>index.php?admin/class_info">
+                        <span><i class="entypo-dot"></i> <?php echo ('class_info'); ?></span>
+                    </a>
+                </li>
+
+                <!-- school_facility -->
+                <li class="<?php if ($page_name == 'school_facility') echo 'opened active'; ?> ">
+                <a href="<?php echo base_url(); ?>index.php?admin/school_facility">
+                        <span><i class="entypo-dot"></i> <?php echo ('School_facility'); ?></span>
+                    </a>
+                </li>
+
+                <!-- popular_teacher -->
+                <li class="<?php if ($page_name == 'popular_teacher') echo 'opened active'; ?> ">
+                <a href="<?php echo base_url(); ?>index.php?admin/popular_teacher">
+                        <span><i class="entypo-dot"></i> <?php echo ('popular_teacher'); ?></span>
+                    </a>
+                </li>
+                <!-- appointment -->
+                <li class="<?php if ($page_name == 'appointment') echo 'opened active'; ?> ">
+                <a href="<?php echo base_url(); ?>index.php?admin/appointment">
+                        <span><i class="entypo-dot"></i> <?php echo ('appointment'); ?></span>
+                    </a>
+                </li>
+                <!-- testimonial -->
+                <li class="<?php if ($page_name == 'testimonial') echo 'opened active'; ?> ">
+                <a href="<?php echo base_url(); ?>index.php?admin/testimonial">
+                        <span><i class="entypo-dot"></i> <?php echo ('testimonial'); ?></span>
+                    </a>
+                </li>
+            </ul>
+        </li>
+        <!-- Home_Setting end -->
     </ul>
 
 </div>

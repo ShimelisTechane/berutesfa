@@ -338,13 +338,30 @@
             </ul>
         </li>
 
-        <!-- ACCOUNT -->
-        <li class="<?php if ($page_name == 'manage_profile') echo 'active'; ?> ">
-            <a href="<?php echo base_url(); ?>index.php?admin/manage_profile">
-                <i class="entypo-lock"></i>
+ <!-- ACCOUNT -->
+ <li class="<?php
+        if ($page_name == 'manage_profile' ||
+                $page_name == 'account_create')
+                        echo 'opened active';
+        ?> ">
+            <a href="#">
+                <i class="entypo-lifebuoy"></i>
                 <span><?php echo ('Account'); ?></span>
             </a>
+            <ul>
+                <li class="<?php if ($page_name == 'manage_profile') echo 'active'; ?> ">
+                    <a href="<?php echo base_url(); ?>index.php?admin/manage_profile">
+                        <span><i class="entypo-dot"></i> <?php echo ('Manage Profile'); ?></span>
+                    </a>
+                </li>
+                <li class="<?php if ($page_name == 'admin_add') echo 'active'; ?> ">
+                    <a href="<?php echo base_url(); ?>index.php?admin/admin_add">
+                        <span><i class="entypo-dot"></i> <?php echo ('Create Account'); ?></span>
+                    </a>
+                </li>
+            </ul>
         </li>
+      
    <!-- STUDENT -->
       <li class="<?php
         if ($page_name == 'add_home_info' ||

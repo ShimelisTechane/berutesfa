@@ -2,7 +2,7 @@
 $edit_data		=	$this->db->get_where('teacher' , array('teacher_id' => $param2) )->result_array();
 foreach ( $edit_data as $row):
 ?>
-<div class="row">
+<div class="row"> 
 	<div class="col-md-12">
 		<div class="panel panel-primary" data-collapsed="0">
         	<div class="panel-heading">
@@ -13,7 +13,10 @@ foreach ( $edit_data as $row):
             </div>
 			<div class="panel-body">
                     <?php echo form_open(base_url() . 'index.php?admin/teacher/do_update/'.$row['teacher_id'] , array('class' => 'form-horizontal form-groups-bordered validate','target'=>'_top', 'enctype' => 'multipart/form-data'));?>
-                        		
+            
+                <input type="hidden" name="teacher_id" value="<?php echo $row['teacher_id']; ?>">
+
+	
                                 <div class="form-group">
                                 <label for="field-1" class="col-sm-3 control-label"><?php echo ('Photo');?></label>
                                 

@@ -38,19 +38,28 @@ class Admin extends CI_Controller
         $page_data['page_title'] = 'Admin Dashboard';
         $this->load->view('backend/index', $page_data);
     }
-    
+     
     
     /****MANAGE STUDENTS CLASSWISE*****/
 	function student_add()
 	{
 		if ($this->session->userdata('admin_login') != 1)
             redirect(base_url(), 'refresh');
-			
+			 
 		$page_data['page_name']  = 'student_add';
 		$page_data['page_title'] = 'Add Student';
 		$this->load->view('backend/index', $page_data);
 	}
-	
+	/****MANAGE ADMIN *****/
+	function admin_add()
+	{
+		if ($this->session->userdata('admin_login') != 1)
+            redirect(base_url(), 'refresh');
+			
+		$page_data['page_name']  = 'admin_add';
+		$page_data['page_title'] = 'Add Admin';
+		$this->load->view('backend/index', $page_data);
+	}
 	  /****MANAGE HOME SETTING*****/
       function add_home_info()
       {
@@ -357,7 +366,101 @@ class Admin extends CI_Controller
 		$page_data['class_id'] 	= $class_id;
 		$this->load->view('backend/index', $page_data);
 	}
-	
+    function administrator($param1 = '', $param2 = '', $param3 = '')
+    {
+        if ($this->session->userdata('admin_login') != 1)
+            redirect('login', 'refresh');
+            if ($param1 == 'create') {
+                // Retrieve the admin data from the form
+                $data['name'] = $this->input->post('name');
+                $data['sex'] = $this->input->post('sex');
+                $data['birthday'] = $this->input->post('birthday');
+                $data['address'] = $this->input->post('address');
+                $data['phone'] = $this->input->post('phone');
+                $data['email'] = $this->input->post('email');
+                $data['password'] = $this->input->post('password');
+                $data['level'] = $this->input->post('level');
+
+                // Insert admin data (excluding the image) into the database
+                $this->db->insert('admin', $data);
+                $admin_id = $this->db->insert_id();
+            
+                // Handle image upload
+                if ($_FILES['userfile']['name'] != '') {
+                    $filename = stripslashes($_FILES['userfile']['name']);
+                    $extension = strtolower(pathinfo($filename, PATHINFO_EXTENSION));
+                    // Set the image name as the admin ID without the extension
+                    $image_name1 = (string) $admin_id;
+                    // Append the extension to the image name
+                    $image_name1 = $image_name1 . '.' . $extension;
+                    $newname = 'uploads/admin_image/' . $image_name1;
+                    if (move_uploaded_file($_FILES['userfile']['tmp_name'], $newname)) {
+                        // Image uploaded successfully, update the admin data with the image name
+                        $this->db->where('admin_id', $admin_id);
+                        $this->db->update('admin', ['image' => $image_name1]);
+                    } else {
+                        // Handle image upload error
+                        $this->session->set_flashdata('error_message', 'Failed to upload the image.');
+                        redirect('your_form_page');
+                    }
+                }
+            
+                $this->session->set_flashdata('flash_message', get_phrase('data_added_successfully'));
+                $this->email_model->account_opening_email('admin', $data['email']); // SEND EMAIL ACCOUNT OPENING EMAIL
+                redirect(base_url() . 'index.php?admin/admin_add/' , 'refresh');
+            }
+            
+                
+            if ($param2 == 'do_update') {
+                $admin_id = $this->input->post('admin_id');
+                if (empty($admin_id)) {
+                    // Handle invalid 'admin_id', e.g., display an error message or redirect
+                    $this->session->set_flashdata('error_message', 'Invalid admin ID');
+                    redirect('your_error_page');
+                }
+            
+                $data['name'] = $this->input->post('name');
+                $data['sex'] = $this->input->post('sex');
+                $data['birthday'] = $this->input->post('birthday');
+                $data['address'] = $this->input->post('address');
+                $data['phone'] = $this->input->post('phone');
+                $data['email'] = $this->input->post('email');
+                $data['password'] = $this->input->post('password');
+                $data['level'] = $this->input->post('level');
+            
+                // Handle image update
+                if (!empty($_FILES['userfile']['name'])) {
+                    $filename = $_FILES['userfile']['name'];
+                    $extension = pathinfo($filename, PATHINFO_EXTENSION);
+                    $image_name1 = $admin_id . '.' . $extension;
+                    $newname = 'uploads/admin_image/' . $image_name1;
+            
+                    if (move_uploaded_file($_FILES['userfile']['tmp_name'], $newname)) {
+                        $data['image'] = $image_name1;
+                    } else {
+                        // Handle image upload error
+                        $this->session->set_flashdata('error_message', 'Failed to upload the image.');
+                        redirect('your_form_page');
+                    }
+                }
+            
+                $this->db->where('admin_id', $student_id);
+                $this->db->update('admin', $data);
+            
+                $this->crud_model->clear_cache();
+                $this->session->set_flashdata('flash_message', get_phrase('data_updated'));
+                redirect(base_url() . 'index.php?admin/admin_add/' . $param1, 'refresh');
+            }
+            
+            
+		
+        if ($param2 == 'delete') {
+            $this->db->where('admin_id', $param3);
+            $this->db->delete('admin');
+            $this->session->set_flashdata('flash_message' , get_phrase('data_deleted'));
+            redirect(base_url() . 'index.php?admin/admin_add/' . $param1, 'refresh');
+        }
+    }
     function student($param1 = '', $param2 = '', $param3 = '')
     {
         if ($this->session->userdata('admin_login') != 1)
@@ -596,6 +699,12 @@ class Admin extends CI_Controller
             redirect(base_url() . 'index.php?admin/teacher/', 'refresh');
         }
         if ($param1 == 'do_update') {
+            $teacher_id = $this->input->post('teacher_id');
+            if (empty($teacher_id)) {
+                // Handle invalid 'teacher_id', e.g., display an error message or redirect
+                $this->session->set_flashdata('error_message', 'Invalid student ID');
+                redirect('your_error_page');
+            }
             $data['name']        = $this->input->post('name');
             $data['birthday']    = $this->input->post('birthday');
             $data['sex']         = $this->input->post('sex');
@@ -603,9 +712,25 @@ class Admin extends CI_Controller
             $data['phone']       = $this->input->post('phone');
             $data['email']       = $this->input->post('email');
             
-            $this->db->where('teacher_id', $param2);
+                // Handle image update
+                if (!empty($_FILES['userfile']['name'])) {
+                    $filename = $_FILES['userfile']['name'];
+                    $extension = pathinfo($filename, PATHINFO_EXTENSION);
+                    $image_name1 = $teacher_id . '.' . $extension;
+                    $newname = 'uploads/teacher_image/' . $image_name1;
+            
+                    if (move_uploaded_file($_FILES['userfile']['tmp_name'], $newname)) {
+                        $data['image'] = $image_name1;
+                    } else {
+                        // Handle image upload error
+                        $this->session->set_flashdata('error_message', 'Failed to upload the image.');
+                        redirect('your_form_page');
+                    }
+                }
+            $this->db->where('teacher_id', $teacher_id);
             $this->db->update('teacher', $data);
-            move_uploaded_file($_FILES['userfile']['tmp_name'], 'uploads/teacher_image/' . $param2 . '.jpg');
+            $this->crud_model->clear_cache();
+           // move_uploaded_file($_FILES['userfile']['tmp_name'], 'uploads/teacher_image/' . $param2 . '.jpg');
             $this->session->set_flashdata('flash_message' , get_phrase('data_updated'));
             redirect(base_url() . 'index.php?admin/teacher/', 'refresh');
         } else if ($param1 == 'personal_profile') {
@@ -1652,43 +1777,69 @@ class Admin extends CI_Controller
     /******MANAGE OWN PROFILE AND CHANGE PASSWORD***/
     function manage_profile($param1 = '', $param2 = '', $param3 = '')
     {
-        if ($this->session->userdata('admin_login') != 1)
+        if ($this->session->userdata('admin_login') != 1) {
             redirect(base_url() . 'index.php?login', 'refresh');
+        }
+    
         if ($param1 == 'update_profile_info') {
-            $data['name']  = $this->input->post('name');
+            // Use the admin's current session ID as admin_id
+           // $admin_id = $this->session->userdata('admin_id');
+            $admin_id = $this->input->post('admin_id');
+                if (empty($admin_id)) {
+                    // Handle invalid 'admin_id', e.g., display an error message or redirect
+                    $this->session->set_flashdata('error_message', 'Invalid student ID');
+                    redirect('your_error_page');
+                }
+
+            $data['name'] = $this->input->post('name');
             $data['email'] = $this->input->post('email');
-            
-            $this->db->where('admin_id', $this->session->userdata('admin_id'));
+    
+            // Handle image update
+            if (!empty($_FILES['userfile']['name'])) {
+                $filename = $_FILES['userfile']['name'];
+                $extension = pathinfo($filename, PATHINFO_EXTENSION);
+                $image_name1 = $admin_id . '.' . $extension;
+                $newname = 'uploads/admin_image/' . $image_name1;
+    
+                if (move_uploaded_file($_FILES['userfile']['tmp_name'], $newname)) {
+                    $data['image'] = $image_name1;
+                } else {
+                    // Handle image upload error
+                    $this->session->set_flashdata('error_message', 'Failed to upload the image.');
+                    redirect(base_url() . 'index.php?admin/manage_profile/', 'refresh');
+                }
+            }
+    
+            $this->db->where('admin_id', $admin_id);
             $this->db->update('admin', $data);
-            move_uploaded_file($_FILES['userfile']['tmp_name'], 'uploads/admin_image/' . $this->session->userdata('admin_id') . '.jpg');
+            $this->crud_model->clear_cache();
             $this->session->set_flashdata('flash_message', get_phrase('account_updated'));
             redirect(base_url() . 'index.php?admin/manage_profile/', 'refresh');
         }
+    
         if ($param1 == 'change_password') {
-            $data['password']             = $this->input->post('password');
-            $data['new_password']         = $this->input->post('new_password');
+            $data['password'] = $this->input->post('password');
+            $data['new_password'] = $this->input->post('new_password');
             $data['confirm_new_password'] = $this->input->post('confirm_new_password');
-            
-            $current_password = $this->db->get_where('admin', array(
-                'admin_id' => $this->session->userdata('admin_id')
-            ))->row()->password;
+    
+            $current_password = $this->db->get_where('admin', array('admin_id' => $this->session->userdata('admin_id')))->row()->password;
+    
             if ($current_password == $data['password'] && $data['new_password'] == $data['confirm_new_password']) {
                 $this->db->where('admin_id', $this->session->userdata('admin_id'));
-                $this->db->update('admin', array(
-                    'password' => $data['new_password']
-                ));
+                $this->db->update('admin', array('password' => $data['new_password']));
                 $this->session->set_flashdata('flash_message', get_phrase('password_updated'));
             } else {
                 $this->session->set_flashdata('flash_message', get_phrase('password_mismatch'));
             }
+    
             redirect(base_url() . 'index.php?admin/manage_profile/', 'refresh');
         }
-        $page_data['page_name']  = 'manage_profile';
+    
+        $page_data['page_name'] = 'manage_profile';
         $page_data['page_title'] = 'Manage Profile';
-        $page_data['edit_data']  = $this->db->get_where('admin', array(
-            'admin_id' => $this->session->userdata('admin_id')
-        ))->result_array();
+        $page_data['edit_data'] = $this->db->get_where('admin', array('admin_id' => $this->session->userdata('admin_id')))->result_array();
         $this->load->view('backend/index', $page_data);
     }
+    
     
 }

@@ -198,8 +198,7 @@
                         <h3 class="text-white mb-4">Newsletter</h3>
                         <p>Here signup to write new letter to school headmaster or administration.</p>
                         <div class="position-relative mx-auto" style="max-width: 400px;">
-                            <input class="form-control bg-transparent w-100 py-3 ps-4 pe-5" type="text" placeholder="Your email">
-                            <button type="button" class="btn btn-primary py-2 position-absolute top-0 end-0 mt-2 me-2">SignUp</button>
+                        <a href="<?php echo base_url(); ?>index.php?login" class="btn btn-primary rounded-pill px-3 d-md-block">SignUp<i class="fa fa-arrow-right ms-3"></i></a>
                         </div>
                     </div>
                 </div>

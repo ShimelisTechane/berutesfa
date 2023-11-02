@@ -76,7 +76,7 @@
         <div class="container-fluid p-0 mb-5">
             <div class="owl-carousel header-carousel position-relative">
                 <div class="owl-carousel-item position-relative">
-                    <img class="img-fluid" src="img/carousel-1.jpg" alt="">
+                    <img class="img-fluid" src="img/carousel-1.jpg" alt="" style="width: 500px; height: 500px;">
                     <div class="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center" style="background: rgba(0, 0, 0, .2);">
                         <div class="container">
                             <div class="row justify-content-start">
@@ -84,15 +84,15 @@
                                     <h1 class="display-2 text-white animated slideInDown mb-4">The Best Beru Tesfa School For Your Child</h1>
                                     <p class="fs-5 fw-medium text-white mb-4 pb-2">The activities help 
 children develop skills, discover their talents, and foster a sense of pride in their cultural heritage.</p>
-                                    <a href="" class="btn btn-primary rounded-pill py-sm-3 px-sm-5 me-3 animated slideInLeft">Learn More</a>
-                                    <a href="" class="btn btn-dark rounded-pill py-sm-3 px-sm-5 animated slideInRight">Our Classes</a>
+                                    <!-- <a href="" class="btn btn-primary rounded-pill py-sm-3 px-sm-5 me-3 animated slideInLeft">Learn More</a>
+                                    <a href="" class="btn btn-dark rounded-pill py-sm-3 px-sm-5 animated slideInRight">Our Classes</a> -->
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="owl-carousel-item position-relative">
-                    <img class="img-fluid" src="img/carousel-2.jpg" alt="">
+                    <img class="img-fluid" src="img/carousel-2.jpg" alt="" style="width: 500px; height: 500px;">
                     <div class="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center" style="background: rgba(0, 0, 0, .2);">
                         <div class="container">
                             <div class="row justify-content-start">
@@ -100,8 +100,8 @@ children develop skills, discover their talents, and foster a sense of pride in 
                                     <h1 class="display-2 text-white animated slideInDown mb-4">Make A Brighter Future For Your Child</h1>
                                     <p class="fs-5 fw-medium text-white mb-4 pb-2">The activities help 
 children develop skills, discover their talents, and foster a sense of pride in their cultural heritage.</p>
-                                    <a href="" class="btn btn-primary rounded-pill py-sm-3 px-sm-5 me-3 animated slideInLeft">Learn More</a>
-                                    <a href="" class="btn btn-dark rounded-pill py-sm-3 px-sm-5 animated slideInRight">Our Classes</a>
+                                    <!-- <a href="" class="btn btn-primary rounded-pill py-sm-3 px-sm-5 me-3 animated slideInLeft">Learn More</a>
+                                    <a href="" class="btn btn-dark rounded-pill py-sm-3 px-sm-5 animated slideInRight">Our Classes</a> -->
                                 </div>
                             </div>
                         </div>
@@ -124,12 +124,15 @@ children develop skills, discover their talents, and foster a sense of pride in 
                         <div class="facility-item">
                             <div class="facility-icon bg-primary">
                                 <span class="bg-primary"></span>
-                                <i class="fa fa-bus-alt fa-3x text-primary"></i>
+                                <i ><img class="rounded-circle flex-shrink-0" src="img/bus.png" alt="" style="width: 85px; height: 45px;"></i>
                                 <span class="bg-primary"></span>
                             </div>
                             <div class="facility-text bg-primary">
                                 <h3 class="text-primary mb-3">School Bus</h3>
-                                <p class="mb-0">School buses generally consist of a 50-passenger bus body, with special signal lamp and safety provisions, mounted on a long-wheelbase truck chassis</p>
+                                <p class="mb-0">Dear Students and Parents,
+
+As the new school year approaches, we want to ensure a safe and smooth start for our students who rely on school bus transportation. Please take a moment to review the important details and guidelines for our school bus services.
+</p>
                             </div>
                         </div>
                     </div>
@@ -137,12 +140,12 @@ children develop skills, discover their talents, and foster a sense of pride in 
                         <div class="facility-item">
                             <div class="facility-icon bg-success">
                                 <span class="bg-success"></span>
-                                <i class="fa fa-futbol fa-3x text-success"></i>
+                                <i><img class="rounded-circle flex-shrink-0" src="img/playground.jpg" alt="" style="width: 85px; height: 45px;"></i>
                                 <span class="bg-success"></span>
                             </div>
                             <div class="facility-text bg-success">
                                 <h3 class="text-success mb-3">Playground</h3>
-                                <p class="mb-0">The Learning Playground is supported by a specially developed Learning Management System that is customised for the learning needs of our students. </p>
+                                <p class="mb-0">We are delighted to share some thrilling news with all of you! Our brand new and improved playground is now open for play and exploration. We've transformed our playground into a space where fun, creativity, and physical activity can flourish. </p>
                             </div>
                         </div>
                     </div>
@@ -150,12 +153,12 @@ children develop skills, discover their talents, and foster a sense of pride in 
                         <div class="facility-item">
                             <div class="facility-icon bg-warning">
                                 <span class="bg-warning"></span>
-                                <i class="fa fa-home fa-3x text-warning"></i>
+                                <i><img class="rounded-circle flex-shrink-0" src="img/cafteria.jpg" alt="" style="width: 85px; height: 45px;"></i>
                                 <span class="bg-warning"></span>
                             </div>
                             <div class="facility-text bg-warning">
-                                <h3 class="text-warning mb-3">Healthy Canteen</h3>
-                                <p class="mb-0">Main goal is to improve access and educational achievement of schoolchildren through health and nutrition interventions in educational establishments in Ethiopia</p>
+                                <h3 class="text-warning mb-3">School Cafeteria</h3>
+                                <p class="mb-0">Our school cafeterias prioritize nutrition and health. They offer a variety of balanced and nutritious meal options to support the well-being of students. This includes options like whole grains, lean proteins, fruits, vegetables, and low-fat dairy products</p>
                             </div>
                         </div>
                     </div>
@@ -163,12 +166,12 @@ children develop skills, discover their talents, and foster a sense of pride in 
                         <div class="facility-item">
                             <div class="facility-icon bg-info">
                                 <span class="bg-info"></span>
-                                <i class="fa fa-chalkboard-teacher fa-3x text-info"></i>
+                                <i><img class="rounded-circle flex-shrink-0" src="img/positivelearning.jpg" alt="" style="width: 85px; height: 45px;"></i>
                                 <span class="bg-info"></span>
                             </div>
                             <div class="facility-text bg-info">
                                 <h3 class="text-info mb-3">Positive Learning</h3>
-                                <p class="mb-0">Strengthening access to quality education, implementing early learning and school readiness, improving life skills education, strengthening school gender clubs</p>
+                                <p class="mb-0">Dear Students and Parents,Education is a path filled with endless possibilities, and we are excited to be your guides on this incredible adventure. we believe that every day is an opportunity to learn, grow, and discover new horizons.
                             </div>
                         </div>
                     </div>
@@ -180,46 +183,80 @@ children develop skills, discover their talents, and foster a sense of pride in 
 
         <!-- About Start -->
         <div class="container-xxl py-5">
-            <div class="container">
-                <div class="row g-5 align-items-center">
-                    <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
-                        <h1 class="mb-4">Learn More About Our Work And Our Cultural Activities</h1>
-                        <p>Ethiopia's culture is unique in Africa, with influences from Judaism, Christianity and Islam as well as traditional local folklore that combine between the Kingdom of Abyssinia and ancient Yemen and the Kingdom of Solomon the Wise</p>
-                        <p class="mb-4">Ethiopia contains over 80 different ethnic groups. Their ancestries vary, with some tracing back to Bantu or Nilotic tribes of sub-Saharan Africa whilst others have closer heritage to the Cushitic tribes of the Middle East.</p>
-                        <div class="row g-4 align-items-center">
-                            <div class="col-sm-6">
-                                <a class="btn btn-primary rounded-pill py-3 px-5" href="#">Read More</a>
-                            </div>
-                            <div class="col-sm-6">
-                                <div class="d-flex align-items-center">
-                                    <img class="rounded-circle flex-shrink-0" src="img/user.jpg" alt="" style="width: 45px; height: 45px;">
-                                    <div class="ms-3">
-                                        <h6 class="text-primary mb-1">Dr Tollosa</h6>
-                                        <small>Organizer & Developer</small>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+    <div class="container">
+        <div class="row g-5 align-items-center">
+            <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
+                <h1 class="mb-4">Learn More About Our Work And Our Cultural Activities</h1>
+                <p>Ethiopia's culture is unique in Africa, with influences from Judaism, Christianity and Islam as well as traditional local folklore that combine between the Kingdom of Abyssinia and ancient Yemen and the Kingdom of Solomon the Wise</p>
+                <p class="mb-4">Ethiopia contains over 80 different ethnic groups. Their ancestries vary, with some tracing back to Bantu or Nilotic tribes of sub-Saharan Africa whilst others have closer heritage to the Cushitic tribes of the Middle East.</p>
+                <div class="row g-4 align-items-center">
+                    <div class="col-sm-6">
+                        <a class="btn btn-primary rounded-pill py-3 px-5" id="read-more-link" onclick="toggleAdditionalContent(event)">Read More</a>
                     </div>
-                    <div class="col-lg-6 about-img wow fadeInUp" data-wow-delay="0.5s">
-                        <div class="row">
-                            <div class="col-12 text-center">
-                                <img class="img-fluid w-75 rounded-circle bg-light p-3" src="img/about-1.jpg" alt="">
-                            </div>
-                            <div class="col-6 text-start" style="margin-top: -150px;">
-                                <img class="img-fluid w-100 rounded-circle bg-light p-3" src="img/about-2.jpg" alt="">
-                            </div>
-                            <div class="col-6 text-end" style="margin-top: -150px;">
-                                <img class="img-fluid w-100 rounded-circle bg-light p-3" src="img/about-3.jpg" alt="">
-                            </div>
-                        </div>
+                </div>
+            </div>
+            <div class="col-lg-6 about-img wow fadeInUp" data-wow-delay="0.5s">
+                <div class="row">
+                    <div class="col-12 text-center">
+                        <img class="img-fluid w-75 rounded-circle bg-light p-3" src="img/about-1.jpg" alt="">
+                    </div>
+                    <div class="col-6 text-start" style="margin-top: -150px;">
+                        <img class="img-fluid w-100 rounded-circle bg-light p-3" src="img/about-2.jpg" alt="">
+                    </div>
+                    <div class="col-6 text-end" style="margin-top: -150px;">
+                        <img class="img-fluid w-100 rounded-circle bg-light p-3" src="img/about-3.jpg" alt="">
                     </div>
                 </div>
             </div>
         </div>
+        <div class="container" id="additional-content" style="display: none;">
+            <p>Education and culture in Ethiopia are deeply intertwined, with a rich history that has been shaped by diverse cultural influences. Here's an overview of education and culture in Ethiopia:</p>
+        <h3>Diverse Cultural Heritage:</h3>
+        <p>Ethiopia is known for its diverse cultural heritage, with influences from various traditions, religions, and ethnic groups. The country's cultural mosaic is a result of the interplay of indigenous cultures and external influences, including ancient civilizations, Islam, and Christianity. The Ethiopian culture is often referred to as a "melting pot" of traditions.</p>
+        <h3>Language and Writing:</h3>
+        <p>Ethiopia is home to a variety of languages, but Amharic is the official language and serves as a unifying force in the country. Ge'ez, an ancient Semitic language, has played a significant role in Ethiopia's cultural and religious history. The Ge'ez script is used for liturgical purposes in the Ethiopian Orthodox Tewahedo Church.</p>
+         <h3>Education and Historical Centers:</h3>
+         <p>Education has deep roots in Ethiopian culture. Historically, monasteries and churches served as centers of learning, where religious texts were transcribed and preserved. Notably, the city of Axum is known for its ancient obelisks and historical significance.</p>
+        <h3>Ethiopian Orthodox Tewahedo Church:</h3>
+        <p>The Ethiopian Orthodox Tewahedo Church is a fundamental part of Ethiopian culture and has a profound influence on education and spirituality. Many schools and monastic institutions are affiliated with the Church.</p>
+       <h3>Ancient Manuscripts:</h3>
+        <p>Ethiopia is home to numerous ancient manuscripts, some of which are preserved in monasteries and libraries. These manuscripts contain religious texts, historical records, and cultural insights, contributing to the preservation of the country's cultural heritage.</p>
+       <h3>Traditional Education:</h3>
+      <p>In addition to formal education, Ethiopia has a rich tradition of oral education, where knowledge, wisdom, and cultural values are passed down through storytelling, proverbs, and folk traditions.</p>
+     <h3>Modern Education System:</h3>
+     <p>Ethiopia has made significant strides in modern education in recent decades. The country has a formal education system that includes primary, secondary, and tertiary education. Efforts have been made to improve access to education for all citizens.</p>
+     <h3>UNESCO World Heritage Sites:</h3>
+     <p>Ethiopia boasts several UNESCO World Heritage Sites, including Lalibela, a town known for its rock-hewn churches, and Aksum, an ancient city that is historically significant.</p>
+     <h3>Arts and Crafts:</h3>
+      <p>Ethiopian culture is rich in arts and crafts, including traditional music, dance, painting, and handwoven textiles. These artistic expressions often reflect the country's diverse cultural traditions.</p>
+      <h3>Cultural Festivals:</h3>
+      <p>Ethiopia celebrates various cultural festivals, with some of the most prominent being Timket (Epiphany), Meskel (Finding of the True Cross), and Enkutatash (New Year). These celebrations are a testament to the strong cultural and religious identity of the Ethiopian people.</p>
+       <h3>Cultural Preservation:</h3>
+       <p>Ethiopia has made efforts to preserve and protect its cultural heritage, and organizations like the Authority for Research and Conservation of Cultural Heritage (ARCCH) work towards safeguarding and promoting the nation's cultural treasures.</p>
+    <p>In Ethiopia, culture and education are deeply interconnected, with an emphasis on preserving traditional values while embracing modern education and development. This unique blend of cultural diversity and educational advancement makes Ethiopia a fascinating and culturally rich nation.</p>
+    </div>
+    </div>
+</div>
+
+<script>
+    function toggleAdditionalContent(event) {
+        event.preventDefault();
+        var additionalContent = document.getElementById('additional-content');
+        var readMoreLink = document.getElementById('read-more-link');
+
+        if (additionalContent.style.display === 'none') {
+            additionalContent.style.display = 'block';
+            readMoreLink.innerText = 'Read Less';
+        } else {
+            additionalContent.style.display = 'none';
+            readMoreLink.innerText = 'Read More';
+        }
+    }
+</script>
+                </div>
+            </div>
+        </div>
         <!-- About End -->
-
-
         <!-- Call To Action Start -->
         <div class="container-xxl py-5">
             <div class="container">
@@ -256,7 +293,7 @@ children develop skills, discover their talents, and foster a sense of pride in 
                     <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
                         <div class="classes-item">
                             <div class="bg-light rounded-circle w-75 mx-auto p-3">
-                                <img class="img-fluid rounded-circle" src="img/classes-1.jpg" alt="">
+                                <img class="img-fluid rounded-circle" src="img/classes-1.jpg" alt="" style="width: 200px; height: 250px;">
                             </div>
                             <div class="bg-light rounded p-4 pt-5 mt-n5">
                                 <a class="d-block text-center h3 mt-3 mb-4" href="">Arts and Physical Education</a>
@@ -278,7 +315,7 @@ children develop skills, discover their talents, and foster a sense of pride in 
                     <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
                         <div class="classes-item">
                             <div class="bg-light rounded-circle w-75 mx-auto p-3">
-                                <img class="img-fluid rounded-circle" src="img/classes-2.jpg" alt="">
+                                <img class="img-fluid rounded-circle" src="img/motherlanguage.jpg" alt="" style="width: 200px; height: 280px;">
                             </div>
                             <div class="bg-light rounded p-4 pt-5 mt-n5">
                                 <a class="d-block text-center h3 mt-3 mb-4" href="">Mother Tongue </a>
@@ -300,7 +337,7 @@ children develop skills, discover their talents, and foster a sense of pride in 
                     <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
                         <div class="classes-item">
                             <div class="bg-light rounded-circle w-75 mx-auto p-3">
-                                <img class="img-fluid rounded-circle" src="img/classes-3.jpg" alt="">
+                                <img class="img-fluid rounded-circle" src="img/env.jpg" alt=""  style="width: 200px; height: 280px;">
                             </div>
                             <div class="bg-light rounded p-4 pt-5 mt-n5">
                                 <a class="d-block text-center h3 mt-3 mb-4" href="">Environmental Science</a>
@@ -398,44 +435,12 @@ children develop skills, discover their talents, and foster a sense of pride in 
                     <div class="row g-0">
                         <div class="col-lg-6 wow fadeIn" data-wow-delay="0.1s">
                             <div class="h-100 d-flex flex-column justify-content-center p-5">
-                                <h1 class="mb-4">Make Appointment</h1>
-                                <form>
-                                    <div class="row g-3">
-                                        <div class="col-sm-6">
-                                            <div class="form-floating">
-                                                <input type="text" class="form-control border-0" id="gname" placeholder="Gurdian Name">
-                                                <label for="gname">Gurdian Name</label>
-                                            </div>
-                                        </div>
-                                        <div class="col-sm-6">
-                                            <div class="form-floating">
-                                                <input type="email" class="form-control border-0" id="gmail" placeholder="Gurdian Email">
-                                                <label for="gmail">Gurdian Email</label>
-                                            </div>
-                                        </div>
-                                        <div class="col-sm-6">
-                                            <div class="form-floating">
-                                                <input type="text" class="form-control border-0" id="cname" placeholder="Child Name">
-                                                <label for="cname">Child Name</label>
-                                            </div>
-                                        </div>
-                                        <div class="col-sm-6">
-                                            <div class="form-floating">
-                                                <input type="text" class="form-control border-0" id="cage" placeholder="Child Age">
-                                                <label for="cage">Child Age</label>
-                                            </div>
-                                        </div>
-                                        <div class="col-12">
-                                            <div class="form-floating">
-                                                <textarea class="form-control border-0" placeholder="Leave a message here" id="message" style="height: 100px"></textarea>
-                                                <label for="message">Message</label>
-                                            </div>
-                                        </div>
-                                        <div class="col-12">
-                                            <button class="btn btn-primary w-100 py-3" type="submit">Submit</button>
-                                        </div>
-                                    </div>
-                                </form>
+                                <div class="col-lg-6 wow fadeIn" data-wow-delay="0.5s">
+                            <div class="h-100 d-flex flex-column justify-content-center p-8">
+                            <h3>Make Appointment</h3>
+                                <p class="">Congratulations on Your Outstanding Academic Achievement! </p>
+                            </div>
+                        </div>
                             </div>
                         </div>
                         <div class="col-lg-6 wow fadeIn" data-wow-delay="0.5s" style="min-height: 400px;">
@@ -582,8 +587,9 @@ children develop skills, discover their talents, and foster a sense of pride in 
                         <h3 class="text-white mb-4">Newsletter</h3>
                         <p>Here signup to write new letter to school headmaster or administration.</p>
                         <div class="position-relative mx-auto" style="max-width: 400px;">
-                            <input class="form-control bg-transparent w-100 py-3 ps-4 pe-5" type="text" placeholder="Your email">
-                            <button type="button" class="btn btn-primary py-2 position-absolute top-0 end-0 mt-2 me-2">SignUp</button>
+                            <!-- <input class="form-control bg-transparent w-100 py-3 ps-4 pe-5" type="text" placeholder="Your email"> -->
+                            <!-- <button type="button" class="btn btn-primary py-2 position-absolute top-0 end-0 mt-2 me-2">SignUp</button> -->
+                            <a href="<?php echo base_url(); ?>index.php?login" class="btn btn-primary rounded-pill px-3 d-md-block">SignUp<i class="fa fa-arrow-right ms-3"></i></a>
                         </div>
                     </div>
                 </div>

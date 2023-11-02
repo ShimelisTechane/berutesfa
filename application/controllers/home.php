@@ -17,22 +17,16 @@ class Home extends CI_Controller {
 
     //Default function, redirects to logged in user area
     public function index_home() {
-       
        $this->load->view('backend/index_home');
-        
        if ($this->session->userdata('admin_login') == 1)
        redirect(base_url() . 'index.php?admin/dashboard', 'refresh');
-
    if ($this->session->userdata('teacher_login') == 1)
        redirect(base_url() . 'index.php?teacher/dashboard', 'refresh');
-
    if ($this->session->userdata('student_login') == 1)
        redirect(base_url() . 'index.php?student/dashboard', 'refresh');
-
    if ($this->session->userdata('parent_login') == 1)
        redirect(base_url() . 'index.php?parents/dashboard', 'refresh');
-
-    }
+    } 
 public function about(){
     $this->load->view('backend/about');
 }

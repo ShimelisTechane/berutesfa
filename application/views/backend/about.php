@@ -88,50 +88,82 @@
             </div>
         </div>
         <!-- Page Header End -->
-
-
         <!-- About Start -->
         <div class="container-xxl py-5">
-            <div class="container">
-                <div class="row g-5 align-items-center">
-                    <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
-                        <h1 class="mb-4">Learn More About Our Work And Our Cultural Activities</h1>
-                        <p>Ethiopia's culture is unique in Africa, with influences from Judaism, Christianity and Islam as well as traditional local folklore that combine between the Kingdom of Abyssinia and ancient Yemen and the Kingdom of Solomon the Wise.</p>
-                        <p class="mb-4">Ethiopia contains over 80 different ethnic groups. Their ancestries vary, with some tracing back to Bantu or Nilotic tribes of sub-Saharan Africa whilst others have closer heritage to the Cushitic tribes of the Middle East.</p>
-                        <div class="row g-4 align-items-center">
-                            <div class="col-sm-6">
-                                <a class="btn btn-primary rounded-pill py-3 px-5" href="">Read More</a>
-                            </div>
-                            <div class="col-sm-6">
-                                <div class="d-flex align-items-center">
-                                    <img class="rounded-circle flex-shrink-0" src="img/user.jpg" alt="" style="width: 45px; height: 45px;">
-                                    <div class="ms-3">
-                                        <h6 class="text-primary mb-1">Jhon D</h6>
-                                        <small>School Head Master</small>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+    <div class="container">
+        <div class="row g-5 align-items-center">
+            <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
+                <h1 class="mb-4">Learn More About Our Work And Our Cultural Activities</h1>
+                <p>Ethiopia's culture is unique in Africa, with influences from Judaism, Christianity and Islam as well as traditional local folklore that combine between the Kingdom of Abyssinia and ancient Yemen and the Kingdom of Solomon the Wise</p>
+                <p class="mb-4">Ethiopia contains over 80 different ethnic groups. Their ancestries vary, with some tracing back to Bantu or Nilotic tribes of sub-Saharan Africa whilst others have closer heritage to the Cushitic tribes of the Middle East.</p>
+                <div class="row g-4 align-items-center">
+                    <div class="col-sm-6">
+                        <a class="btn btn-primary rounded-pill py-3 px-5" id="read-more-link" onclick="toggleAdditionalContent(event)">Read More</a>
                     </div>
-                    <div class="col-lg-6 about-img wow fadeInUp" data-wow-delay="0.5s">
-                        <div class="row">
-                            <div class="col-12 text-center">
-                                <img class="img-fluid w-75 rounded-circle bg-light p-3" src="img/about-1.jpg" alt="">
-                            </div>
-                            <div class="col-6 text-start" style="margin-top: -150px;">
-                                <img class="img-fluid w-100 rounded-circle bg-light p-3" src="img/about-2.jpg" alt="">
-                            </div>
-                            <div class="col-6 text-end" style="margin-top: -150px;">
-                                <img class="img-fluid w-100 rounded-circle bg-light p-3" src="img/about-3.jpg" alt="">
-                            </div>
-                        </div>
+                </div>
+            </div>
+            <div class="col-lg-6 about-img wow fadeInUp" data-wow-delay="0.5s">
+                <div class="row">
+                    <div class="col-12 text-center">
+                        <img class="img-fluid w-75 rounded-circle bg-light p-3" src="img/about-1.jpg" alt="">
+                    </div>
+                    <div class="col-6 text-start" style="margin-top: -150px;">
+                        <img class="img-fluid w-100 rounded-circle bg-light p-3" src="img/about-2.jpg" alt="">
+                    </div>
+                    <div class="col-6 text-end" style="margin-top: -150px;">
+                        <img class="img-fluid w-100 rounded-circle bg-light p-3" src="img/about-3.jpg" alt="">
                     </div>
                 </div>
             </div>
         </div>
+        <div class="container" id="additional-content" style="display: none;">
+            <p>Education and culture in Ethiopia are deeply intertwined, with a rich history that has been shaped by diverse cultural influences. Here's an overview of education and culture in Ethiopia:</p>
+        <h3>Diverse Cultural Heritage:</h3>
+        <p>Ethiopia is known for its diverse cultural heritage, with influences from various traditions, religions, and ethnic groups. The country's cultural mosaic is a result of the interplay of indigenous cultures and external influences, including ancient civilizations, Islam, and Christianity. The Ethiopian culture is often referred to as a "melting pot" of traditions.</p>
+        <h3>Language and Writing:</h3>
+        <p>Ethiopia is home to a variety of languages, but Amharic is the official language and serves as a unifying force in the country. Ge'ez, an ancient Semitic language, has played a significant role in Ethiopia's cultural and religious history. The Ge'ez script is used for liturgical purposes in the Ethiopian Orthodox Tewahedo Church.</p>
+         <h3>Education and Historical Centers:</h3>
+         <p>Education has deep roots in Ethiopian culture. Historically, monasteries and churches served as centers of learning, where religious texts were transcribed and preserved. Notably, the city of Axum is known for its ancient obelisks and historical significance.</p>
+        <h3>Ethiopian Orthodox Tewahedo Church:</h3>
+        <p>The Ethiopian Orthodox Tewahedo Church is a fundamental part of Ethiopian culture and has a profound influence on education and spirituality. Many schools and monastic institutions are affiliated with the Church.</p>
+       <h3>Ancient Manuscripts:</h3>
+        <p>Ethiopia is home to numerous ancient manuscripts, some of which are preserved in monasteries and libraries. These manuscripts contain religious texts, historical records, and cultural insights, contributing to the preservation of the country's cultural heritage.</p>
+       <h3>Traditional Education:</h3>
+      <p>In addition to formal education, Ethiopia has a rich tradition of oral education, where knowledge, wisdom, and cultural values are passed down through storytelling, proverbs, and folk traditions.</p>
+     <h3>Modern Education System:</h3>
+     <p>Ethiopia has made significant strides in modern education in recent decades. The country has a formal education system that includes primary, secondary, and tertiary education. Efforts have been made to improve access to education for all citizens.</p>
+     <h3>UNESCO World Heritage Sites:</h3>
+     <p>Ethiopia boasts several UNESCO World Heritage Sites, including Lalibela, a town known for its rock-hewn churches, and Aksum, an ancient city that is historically significant.</p>
+     <h3>Arts and Crafts:</h3>
+      <p>Ethiopian culture is rich in arts and crafts, including traditional music, dance, painting, and handwoven textiles. These artistic expressions often reflect the country's diverse cultural traditions.</p>
+      <h3>Cultural Festivals:</h3>
+      <p>Ethiopia celebrates various cultural festivals, with some of the most prominent being Timket (Epiphany), Meskel (Finding of the True Cross), and Enkutatash (New Year). These celebrations are a testament to the strong cultural and religious identity of the Ethiopian people.</p>
+       <h3>Cultural Preservation:</h3>
+       <p>Ethiopia has made efforts to preserve and protect its cultural heritage, and organizations like the Authority for Research and Conservation of Cultural Heritage (ARCCH) work towards safeguarding and promoting the nation's cultural treasures.</p>
+    <p>In Ethiopia, culture and education are deeply interconnected, with an emphasis on preserving traditional values while embracing modern education and development. This unique blend of cultural diversity and educational advancement makes Ethiopia a fascinating and culturally rich nation.</p>
+    </div>
+    </div>
+</div>
+ 
+<script>
+    function toggleAdditionalContent(event) {
+        event.preventDefault();
+        var additionalContent = document.getElementById('additional-content');
+        var readMoreLink = document.getElementById('read-more-link');
+
+        if (additionalContent.style.display === 'none') {
+            additionalContent.style.display = 'block';
+            readMoreLink.innerText = 'Read Less';
+        } else {
+            additionalContent.style.display = 'none';
+            readMoreLink.innerText = 'Read More';
+        }
+    }
+</script>
+                </div>
+            </div>
+        </div>
         <!-- About End -->
-
-
         <!-- Call To Action Start -->
         <div class="container-xxl py-5">
             <div class="container">
@@ -242,8 +274,7 @@
                         <h3 class="text-white mb-4">Newsletter</h3>
                         <p>Here signup to write new letter to school headmaster or administration.</p>
                         <div class="position-relative mx-auto" style="max-width: 400px;">
-                            <input class="form-control bg-transparent w-100 py-3 ps-4 pe-5" type="text" placeholder="Your email">
-                            <button type="button" class="btn btn-primary py-2 position-absolute top-0 end-0 mt-2 me-2">SignUp</button>
+                        <a href="<?php echo base_url(); ?>index.php?login" class="btn btn-primary rounded-pill px-3 d-md-block">SignUp<i class="fa fa-arrow-right ms-3"></i></a>
                         </div>
                     </div>
                 </div>

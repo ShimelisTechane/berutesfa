@@ -55,7 +55,7 @@ class Admin extends CI_Controller
 	{
 		if ($this->session->userdata('admin_login') != 1)
             redirect(base_url(), 'refresh');
-			
+	 		
 		$page_data['page_name']  = 'admin_add';
 		$page_data['page_title'] = 'Add Admin';
 		$this->load->view('backend/index', $page_data);
@@ -94,8 +94,7 @@ class Admin extends CI_Controller
         function school_facility()
         {
             if ($this->session->userdata('admin_login') != 1)
-                redirect(base_url(), 'refresh');
-                
+                redirect(base_url(), 'refresh');  
             $page_data['page_name']  = 'school_facility';
             $page_data['page_title'] = 'Add School Facility';
             $this->load->view('backend/index', $page_data);
@@ -461,6 +460,94 @@ class Admin extends CI_Controller
             redirect(base_url() . 'index.php?admin/admin_add/' . $param1, 'refresh');
         }
     }
+    //ADD FACILITY
+    function facility($param1 = '', $param2 = '', $param3 = '')
+    {
+        if ($this->session->userdata('admin_login') != 1)
+            redirect('login', 'refresh');
+            if ($param1 == 'create') {
+                // Retrieve data from the form
+                $data['schoolBus'] = $this->input->post('facility_collection');
+                $data['playground'] = $this->input->post('facility_collection');
+                $data['healthcenter'] = $this->input->post('facility_collection');
+                $data['positivelearning'] = $this->input->post('facility_collection');
+                $data['description'] = $this->input->post('description');
+            
+                // Insert facility data (excluding the image) into the database
+                $this->db->insert('facility', $data);
+                $facility_id = $this->db->insert_id();
+            
+                // Handle image upload
+                if ($_FILES['userfile']['name'] != '') {
+                    $filename = stripslashes($_FILES['userfile']['name']);
+                    $extension = strtolower(pathinfo($filename, PATHINFO_EXTENSION));
+                    // Set the image name as the facility ID without the extension
+                    $image_name1 = (string) $facility_id;
+                    // Append the extension to the image name
+                    $image_name1 = $image_name1 . '.' . $extension;
+                    $newname = 'uploads/facility_image/' . $image_name1;
+                    if (move_uploaded_file($_FILES['userfile']['tmp_name'], $newname)) {
+                        // Image uploaded successfully, update the facility data with the image name
+                        $this->db->where('facility_id', $facility_id);
+                        $this->db->update('facility', ['image' => $image_name1]);
+                    } else {
+                        // Handle image upload error
+                        $this->session->set_flashdata('error_message', 'Failed to upload the image.');
+                        redirect('your_form_page');
+                    }
+                }
+             redirect(base_url() . 'index.php?admin/school_facility/', 'refresh');
+            }
+            
+                
+            if ($param2 == 'do_update') {
+                $facility_id = $this->input->post('facility_id');
+                if (empty($facility_id)) {
+                    // Handle invalid 'facility_id', e.g., display an error message or redirect
+                    $this->session->set_flashdata('error_message', 'Invalid facility ID');
+                    redirect('your_error_page');
+                }
+                $data['schoolBus'] = $this->input->post('facility_collection');
+                $data['playground'] = $this->input->post('facility_collection');
+                $data['healthcenter'] = $this->input->post('facility_collection');
+                $data['positivelearning'] = $this->input->post('facility_collection');
+                $data['description'] = $this->input->post('description');
+               
+                // Handle image update
+                if (!empty($_FILES['userfile']['name'])) {
+                    $filename = $_FILES['userfile']['name'];
+                    $extension = pathinfo($filename, PATHINFO_EXTENSION);
+                    $image_name1 = $facility_id . '.' . $extension;
+                    $newname = 'uploads/facility_image/' . $image_name1;
+            
+                    if (move_uploaded_file($_FILES['userfile']['tmp_name'], $newname)) {
+                        $data['image'] = $image_name1;
+                    } else {
+                        // Handle image upload error
+                        $this->session->set_flashdata('error_message', 'Failed to upload the image.');
+                        redirect('your_form_page');
+                    }
+                }
+            
+                $this->db->where('facility_id', $facility_id);
+                $this->db->update('facility', $data);
+            
+                $this->crud_model->clear_cache();
+                $this->session->set_flashdata('flash_message', get_phrase('data_updated'));
+                redirect(base_url() . 'index.php?admin/school_facility/' . $param1, 'refresh');
+            }
+            
+            
+		
+        if ($param2 == 'delete') {
+            $this->db->where('facility_id', $param3);
+            $this->db->delete('facility');
+            $this->session->set_flashdata('flash_message' , get_phrase('data_deleted'));
+            redirect(base_url() . 'index.php?admin/school_facility/' . $param1, 'refresh');
+        }
+    }
+
+    // STUDENT REGISTER
     function student($param1 = '', $param2 = '', $param3 = '')
     {
         if ($this->session->userdata('admin_login') != 1)

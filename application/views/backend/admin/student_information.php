@@ -1,5 +1,5 @@
 <hr />
-<a href="javascript:;" onclick="showAjaxModal('<?php echo base_url();?>index.php?modal/popup/student_add/');" 
+<a href="javascript:;" onclick="showAjaxModal('<?php echo base_url();?>index.php?modal/popup/student_add/')" 
     class="btn btn-primary pull-right">
         <i class="entypo-plus-circled"></i>
         <?php echo ('Add New Student');?>

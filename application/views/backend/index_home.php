@@ -76,7 +76,7 @@
         <div class="container-fluid p-0 mb-5">
             <div class="owl-carousel header-carousel position-relative">
                 <div class="owl-carousel-item position-relative">
-                    <img class="img-fluid" src="img/carousel-1.jpg" alt="" style="width: 500px; height: 500px;">
+                    <img class="img-fluid" src="img/carousel-1.jpg" alt="" style=" height: 500px;">
                     <div class="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center" style="background: rgba(0, 0, 0, .2);">
                         <div class="container">
                             <div class="row justify-content-start">
@@ -92,7 +92,7 @@ children develop skills, discover their talents, and foster a sense of pride in 
                     </div>
                 </div>
                 <div class="owl-carousel-item position-relative">
-                    <img class="img-fluid" src="img/carousel-2.jpg" alt="" style="width: 500px; height: 500px;">
+                    <img class="img-fluid" src="img/carousel-2.jpg" alt="" style=" height: 500px;">
                     <div class="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center" style="background: rgba(0, 0, 0, .2);">
                         <div class="container">
                             <div class="row justify-content-start">
@@ -211,27 +211,27 @@ As the new school year approaches, we want to ensure a safe and smooth start for
         </div>
         <div class="container" id="additional-content" style="display: none;">
             <p>Education and culture in Ethiopia are deeply intertwined, with a rich history that has been shaped by diverse cultural influences. Here's an overview of education and culture in Ethiopia:</p>
-        <h3>Diverse Cultural Heritage:</h3>
+        <h5>Diverse Cultural Heritage:</h5>
         <p>Ethiopia is known for its diverse cultural heritage, with influences from various traditions, religions, and ethnic groups. The country's cultural mosaic is a result of the interplay of indigenous cultures and external influences, including ancient civilizations, Islam, and Christianity. The Ethiopian culture is often referred to as a "melting pot" of traditions.</p>
-        <h3>Language and Writing:</h3>
+        <h5>Language and Writing:</h5>
         <p>Ethiopia is home to a variety of languages, but Amharic is the official language and serves as a unifying force in the country. Ge'ez, an ancient Semitic language, has played a significant role in Ethiopia's cultural and religious history. The Ge'ez script is used for liturgical purposes in the Ethiopian Orthodox Tewahedo Church.</p>
-         <h3>Education and Historical Centers:</h3>
+         <h5>Education and Historical Centers:</h5>
          <p>Education has deep roots in Ethiopian culture. Historically, monasteries and churches served as centers of learning, where religious texts were transcribed and preserved. Notably, the city of Axum is known for its ancient obelisks and historical significance.</p>
-        <h3>Ethiopian Orthodox Tewahedo Church:</h3>
+        <h5>Ethiopian Orthodox Tewahedo Church:</h5>
         <p>The Ethiopian Orthodox Tewahedo Church is a fundamental part of Ethiopian culture and has a profound influence on education and spirituality. Many schools and monastic institutions are affiliated with the Church.</p>
-       <h3>Ancient Manuscripts:</h3>
+       <h5>Ancient Manuscripts:</h5>
         <p>Ethiopia is home to numerous ancient manuscripts, some of which are preserved in monasteries and libraries. These manuscripts contain religious texts, historical records, and cultural insights, contributing to the preservation of the country's cultural heritage.</p>
-       <h3>Traditional Education:</h3>
+       <h5>Traditional Education:</h5>
       <p>In addition to formal education, Ethiopia has a rich tradition of oral education, where knowledge, wisdom, and cultural values are passed down through storytelling, proverbs, and folk traditions.</p>
-     <h3>Modern Education System:</h3>
+     <h5>Modern Education System:</h5>
      <p>Ethiopia has made significant strides in modern education in recent decades. The country has a formal education system that includes primary, secondary, and tertiary education. Efforts have been made to improve access to education for all citizens.</p>
-     <h3>UNESCO World Heritage Sites:</h3>
+     <h5>UNESCO World Heritage Sites:</h5>
      <p>Ethiopia boasts several UNESCO World Heritage Sites, including Lalibela, a town known for its rock-hewn churches, and Aksum, an ancient city that is historically significant.</p>
-     <h3>Arts and Crafts:</h3>
+     <h5>Arts and Crafts:</h5>
       <p>Ethiopian culture is rich in arts and crafts, including traditional music, dance, painting, and handwoven textiles. These artistic expressions often reflect the country's diverse cultural traditions.</p>
-      <h3>Cultural Festivals:</h3>
+      <h5>Cultural Festivals:</h5>
       <p>Ethiopia celebrates various cultural festivals, with some of the most prominent being Timket (Epiphany), Meskel (Finding of the True Cross), and Enkutatash (New Year). These celebrations are a testament to the strong cultural and religious identity of the Ethiopian people.</p>
-       <h3>Cultural Preservation:</h3>
+       <h5>Cultural Preservation:</h5>
        <p>Ethiopia has made efforts to preserve and protect its cultural heritage, and organizations like the Authority for Research and Conservation of Cultural Heritage (ARCCH) work towards safeguarding and promoting the nation's cultural treasures.</p>
     <p>In Ethiopia, culture and education are deeply interconnected, with an emphasis on preserving traditional values while embracing modern education and development. This unique blend of cultural diversity and educational advancement makes Ethiopia a fascinating and culturally rich nation.</p>
     </div>

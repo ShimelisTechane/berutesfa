@@ -11,6 +11,5 @@ $route['classes'] = 'Home/classes';
 $route['contact'] = 'Home/contact';
 $route['facility'] = 'Home/facility';
 $route['team'] = 'Home/team';
-$route['testimonial'] = 'Home/facility';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;

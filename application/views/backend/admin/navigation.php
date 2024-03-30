@@ -46,7 +46,7 @@
         ?> ">
             <a href="#">
                 <i class="entypo-flow-tree"></i>
-                <span><?php echo ('Class'); ?></span>
+                <span style = "color: green"><b><?php echo ('Class'); ?></b></span>
             </a>
             <ul>
                 <li class="<?php if ($page_name == 'class') echo 'active'; ?> ">
@@ -66,7 +66,7 @@
         <li class="<?php if ($page_name == 'subject') echo 'opened active'; ?> ">
             <a href="#">
                 <i class="entypo-docs"></i>
-                <span><?php echo ('Subject'); ?></span>
+                <span style = "color: green"><?php echo ('Subject'); ?></span>
             </a>
             <ul>
                 <?php
@@ -86,7 +86,7 @@
         <li class="<?php if ($page_name == 'class_routine') echo 'active'; ?> ">
             <a href="<?php echo base_url(); ?>index.php?admin/class_routine">
                 <i class="entypo-calendar"></i>
-                <span><?php echo ('Class Routine'); ?></span>
+                <span style = "color: green"><?php echo ('Class Routine'); ?></span>
             </a>
         </li>
 
